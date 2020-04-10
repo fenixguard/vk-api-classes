@@ -36,6 +36,7 @@ class User:
         print(f"{datetime.now()} - Получение списка друзей пользователя '{friend.user_id}'")
         second_user = set(friend.get_friends())
         time.sleep(1)
+
         print('\nСписок общих друзей:')
         friends = first_user & second_user
         return list(map(User, friends)) or ['Общих друзей - нет!']
