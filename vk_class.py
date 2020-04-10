@@ -1,7 +1,6 @@
-import requests
-import time
-
 from datetime import datetime
+
+import requests
 
 VK_URL = 'https://api.vk.com/method/'
 VK_TOKEN = '958eb5d439726565e9333aa30e50e0f937ee432e927f0dbd541c541887d919a7c56f95c04217915c32008'
@@ -31,11 +30,9 @@ class User:
     def __and__(self, friend):
         print(f"{datetime.now()} - Получение списка друзей пользователя '{self.user_id}'")
         first_user = set(self.get_friends())
-        time.sleep(1)
 
         print(f"{datetime.now()} - Получение списка друзей пользователя '{friend.user_id}'")
         second_user = set(friend.get_friends())
-        time.sleep(1)
 
         print('\nСписок общих друзей:')
         friends = first_user & second_user
